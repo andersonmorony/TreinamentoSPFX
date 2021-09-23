@@ -1,4 +1,4 @@
-# my-frist-webpart
+# HelloWorld
 
 ## Summary
 
@@ -19,7 +19,7 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> Node V 10.32.1
 
 ## Solution
 
