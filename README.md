@@ -1,4 +1,4 @@
-# my-frist-webpart
+# HelloWorld
 
 ## Summary
 
@@ -19,20 +19,20 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+> Node V 10.32.1
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+Webart | Author details (Anderson Moroni)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.1|Setembro 22, 2021|Update comment
+1.0|Setembro 20, 2021|Initial release
 
 ## Disclaimer
 
@@ -56,9 +56,7 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- Simple webpart with some components
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
