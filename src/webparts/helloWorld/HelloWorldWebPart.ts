@@ -13,6 +13,8 @@ import { IHelloWorldProps } from './components/IHelloWorldProps';
 import { PropertyFieldNumber } from '@pnp/spfx-property-controls/lib/PropertyFieldNumber';
 import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 
@@ -21,7 +23,7 @@ export interface IHelloWorldWebPartProps {
   Title: string;
   phone: number;
   numberValue: number;
-  lists: string | string[];
+  lists: string;
 }
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {

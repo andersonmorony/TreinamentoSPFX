@@ -8,32 +8,64 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 
-export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
+export interface IHelloWordStates {
+  items: any[],
+  nome: string,
+  idade: string,
+}
+
+export default class HelloWorld extends React.Component<IHelloWorldProps, IHelloWordStates, {}> {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: [],
+      nome: "Anderson",
+      idade: ""
+    }
+  }
+
+
+
+  async componentDidMount() {
+    const newItems: any[] = await sp.web.lists.getById(this.props.lists).items.filter(`Title eq ${this.props.Title}`).get();
+    this.setState({ items: newItems });
+    console.log(newItems);
+  }
+
   public render(): React.ReactElement<IHelloWorldProps> {
 
-    async function pnp(){
-      const items: any[] = await sp.web.lists.getById(this.props.lists).items.get();
-      console.log(items);
-    }
-
-    pnp();
-
     return (
-      <div className={ styles.helloWorld }>
-        <div className={ styles.container }>
-          <div className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Titulo: {this.props.Title}</span>
-              <p className={ styles.description }>Descrição: {escape(this.props.description)}</p>
-              <span className={ styles.title }>Phone: {this.props.phone}</span><br/>
-              <span className={ styles.title }>Number: {this.props.numberValue}</span><br/>
-              <span className={ styles.title }>List: {this.props.lists}</span><br/>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Created</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              this.state.items.map((item) => {
+                return(
+                  <tr>
+                    <th scope="row">{item.ID}</th>
+                    <td>{item.Title}</td>
+                    <td>{item.Created}</td>
+                    <td>
+                      <button className="btn btn-warning btn-sm">Editar</button>
+                      <button className="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+
+          </tbody>
+        </table>
       </div>
     );
   }

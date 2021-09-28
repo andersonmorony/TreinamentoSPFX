@@ -3,5 +3,5 @@ export interface IHelloWorldProps {
   Title: string;
   phone: number;
   numberValue: number;
-  lists: string | string[];
+  lists: string;
 }
