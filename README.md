@@ -2,9 +2,10 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Até o momento fizemos a instalação da solução, adicionamos a biblioteca de porpiedades do spfx e adicionamos o PNP em nosso projeto.
 
-[picture of the solution in action, if possible]
+![alt text](https://github.com/andersonmorony/TreinamentoSPFX/blob/main/blob/image1.PNG?raw=true)
+
 
 ## Used SharePoint Framework Version
 
